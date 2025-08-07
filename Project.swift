@@ -9,8 +9,8 @@ let project = Project(
             product: .app,
             bundleId: "dev.tuist.Placeholder",
             infoPlist: .default,
-            sources: ["Placeholder/Sources/**"],
-            resources: ["Placeholder/Resources/**"],
+            sources: ["App/Sources/**"],
+            resources: ["App/Resources/**"],
             dependencies: []
         ),
         .target(
@@ -19,7 +19,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "dev.tuist.PlaceholderTests",
             infoPlist: .default,
-            sources: ["Placeholder/Tests/**"],
+            sources: ["App/Tests/**"],
             resources: [],
             dependencies: [.target(name: "Placeholder")]
         ),
