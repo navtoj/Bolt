@@ -13,15 +13,5 @@ let project = Project(
             resources: ["App/Resources/**"],
             dependencies: []
         ),
-        .target(
-            name: "PlaceholderTests",
-            destinations: .macOS,
-            product: .unitTests,
-            bundleId: "dev.tuist.PlaceholderTests",
-            infoPlist: .default,
-            sources: ["App/Tests/**"],
-            resources: [],
-            dependencies: [.target(name: "Placeholder")]
-        ),
     ]
 )
