@@ -1,7 +1,7 @@
 import ProjectDescription
 
-let name = "Placeholder"
-let identifier = "dev.tuist." + name.lowercased()
+let name = "Bolt"
+let identifier = "com.navtoj." + name.lowercased()
 
 let infoPlist: [String: Plist.Value] = [
 	"CFBundleVersion": "1", // Internal

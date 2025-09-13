@@ -1,9 +1,9 @@
 import SwiftUI
 
 @main
-struct PlaceholderApp: App {
+struct BoltApp: App {
 	var body: some Scene {
-		WindowGroup {
+		Window("Bolt", id: "bolt") {
 			ContentView()
 		}
 	}
