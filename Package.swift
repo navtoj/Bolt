@@ -17,5 +17,6 @@ let package = Package(
 	dependencies: [
 		// https://docs.tuist.io/documentation/tuist/dependencies
 		.package(url: "https://github.com/bernndr/swift-macros.git", .upToNextMajor(from: "0.1.1")),
+		.package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", .upToNextMajor(from: "6.2.0")),
 	]
 )

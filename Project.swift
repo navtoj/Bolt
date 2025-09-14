@@ -32,6 +32,7 @@ let app = Target.target(
 	]),
 	dependencies: [
 		.external(name: "SwiftMacros"),
+		.external(name: "SFSafeSymbols"),
 	],
 	settings: .settings(
 		base: [

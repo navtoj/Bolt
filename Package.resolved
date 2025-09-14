@@ -1,6 +1,15 @@
 {
-  "originHash" : "5e4f4e2fbfff26872878bcee6c5d8ee897024f1901c09aaf2ae257a7d504447b",
+  "originHash" : "b0d86617deb834ee62df464ff2cc823fb7babc585eac5745f35e47b46fd10d7d",
   "pins" : [
+    {
+      "identity" : "sfsafesymbols",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SFSafeSymbols/SFSafeSymbols.git",
+      "state" : {
+        "revision" : "3dd282d3269b061853a3b3bcd23a509d2aa166ce",
+        "version" : "6.2.0"
+      }
+    },
     {
       "identity" : "swift-macros",
       "kind" : "remoteSourceControl",
