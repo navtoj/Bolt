@@ -30,7 +30,9 @@ let app = Target.target(
 	entitlements: .dictionary([
 		"com.apple.security.app-sandbox": true,
 	]),
-	dependencies: [],
+	dependencies: [
+		.external(name: "SwiftMacros"),
+	],
 	settings: .settings(
 		base: [
 			"ENABLE_HARDENED_RUNTIME": true,
