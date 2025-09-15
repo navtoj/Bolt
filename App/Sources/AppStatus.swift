@@ -58,6 +58,14 @@ private extension AppStatus {
 		about.target = self
 		menu.addItem(about)
 
+		let settings = NSMenuItem(
+			title: "Settings...",
+			action: #selector(AppWindow.shared.open),
+			keyEquivalent: ","
+		)
+		settings.target = AppWindow.shared
+		menu.addItem(settings)
+
 		menu.addItem(.separator())
 
 		menu.addItem(

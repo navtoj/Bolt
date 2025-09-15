@@ -12,34 +12,45 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
 	// MARK: Functions
 
-	func applicationDidFinishLaunching(_: Notification) {
-		// Menu Bar
+	func applicationWillFinishLaunching(_: Notification) {
+		// Single Instance
 
-		if let menu = NSApplication.shared.mainMenu,
-		   let appMenu = menu.items.first,
-		   let submenu = appMenu.submenu
+		if let id = Bundle.main.bundleIdentifier,
+		   NSRunningApplication.runningApplications(withBundleIdentifier: id).count > 1
 		{
-			submenu.addItem(
-				withTitle: "About Bolt",
-				action: #selector(NSApp.orderFrontStandardAboutPanel(_:)),
-				keyEquivalent: "a"
-			)
-
-			submenu.addItem(.separator())
-
-			submenu.addItem(
-				withTitle: "Quit Bolt",
-				action: #selector(NSApp.terminate(_:)),
-				keyEquivalent: "q"
-			)
+			print("Another instance is already running.")
+			NSApp.terminate(nil)
 		}
 
-		// Show Window
+		// Prevent Window Auto-Launch
 
-		window.makeKeyAndOrderFront(nil)
+		#if DEBUG
+			NSApp.setActivationPolicy(.prohibited)
+		#endif
+
+		printd(
+			"Activation Policy (\(NSApp.activationPolicy().rawValue)) —>",
+			"prohibited = \(NSApplication.ActivationPolicy.prohibited.rawValue),",
+			"accessory = \(NSApplication.ActivationPolicy.accessory.rawValue),",
+			"regular = \(NSApplication.ActivationPolicy.regular.rawValue)",
+		)
+	}
+
+	func applicationShouldHandleReopen(_ app: NSApplication, hasVisibleWindows: Bool) -> Bool {
+		// Handle Dock Tile
+
+		if app.windows
+			.filter({ $0.className == AppWindow.shared.className && $0.isVisible })
+			.isEmpty
+		{
+			printd("applicationShouldHandleReopen", NSApp.activationPolicy().rawValue)
+			window.open()
+		}
+
+		return hasVisibleWindows
 	}
 
 	func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool {
-		true
+		false
 	}
 }
