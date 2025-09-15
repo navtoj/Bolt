@@ -29,7 +29,7 @@ let app = Target.target(
 	sources: ["App/Sources/**"],
 	resources: ["App/Resources/**"],
 	entitlements: .dictionary([
-		"com.apple.security.app-sandbox": true,
+		"com.apple.security.app-sandbox": false,
 	]),
 	dependencies: [
 		.external(name: "SFSafeSymbols"),
