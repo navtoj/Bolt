@@ -24,6 +24,7 @@ let app = Target.target(
 	infoPlist: .extendingDefault(with: infoPlist.merging([
 		"LSApplicationCategoryType": "public.app-category.productivity",
 		"NSMainStoryboardFile": "",
+		"LSUIElement": true,
 	], uniquingKeysWith: { _, new in new })),
 	sources: ["App/Sources/**"],
 	resources: ["App/Resources/**"],
