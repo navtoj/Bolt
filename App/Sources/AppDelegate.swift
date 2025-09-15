@@ -10,6 +10,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 	private let status = AppStatus.shared
 	private let window = AppWindow.shared
 
+	// Plugins
+
+	private let mediaKeys = MediaKeys.shared
+
 	// MARK: Functions
 
 	func applicationWillFinishLaunching(_: Notification) {
