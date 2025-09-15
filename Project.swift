@@ -33,6 +33,7 @@ let app = Target.target(
 	]),
 	dependencies: [
 		.external(name: "SFSafeSymbols"),
+		.external(name: "LaunchAtLogin"),
 	],
 	settings: .settings(
 		base: [
