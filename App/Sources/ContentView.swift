@@ -1,8 +1,9 @@
+import LaunchAtLogin
 import SwiftUI
 
 struct ContentView: View {
 	var body: some View {
-		Text("Hello, World!")
+		LaunchAtLogin.Toggle("Open at Login")
 			.padding()
 	}
 }
