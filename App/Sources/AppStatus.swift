@@ -1,6 +1,6 @@
 import AppKit
+import Macros
 import SFSafeSymbols
-import SwiftMacros
 
 // MARK: - AppStatus
 

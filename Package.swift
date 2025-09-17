@@ -16,7 +16,7 @@ let package = Package(
 	name: "Bolt",
 	dependencies: [
 		// https://docs.tuist.io/documentation/tuist/dependencies
-		.package(url: "https://github.com/bernndr/swift-macros.git", .upToNextMajor(from: "0.1.1")),
+		.package(url: "https://github.com/swiftlang/swift-syntax.git", .upToNextMajor(from: "602.0.0")),
 		.package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", .upToNextMajor(from: "6.2.0")),
 		.package(url: "https://github.com/sindresorhus/LaunchAtLogin-Modern.git", .upToNextMajor(from: "1.1.0")),
 	]

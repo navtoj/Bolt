@@ -1,5 +1,5 @@
 {
-  "originHash" : "7c2433b45c6a88e3686b5435268b37ac99a05293f224088f072b35fffb28d3cd",
+  "originHash" : "f1e7cc6994778bc3647ab88e75761cf68c9fae9bdad55f8426b6b8dbc840f93b",
   "pins" : [
     {
       "identity" : "launchatlogin-modern",
@@ -20,21 +20,12 @@
       }
     },
     {
-      "identity" : "swift-macros",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/bernndr/swift-macros.git",
-      "state" : {
-        "revision" : "8c82ef215f2c1351754f048715ac14847877680d",
-        "version" : "0.1.1"
-      }
-    },
-    {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftlang/swift-syntax.git",
       "state" : {
-        "revision" : "0687f71944021d616d34d922343dcef086855920",
-        "version" : "600.0.1"
+        "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
+        "version" : "602.0.0"
       }
     }
   ],

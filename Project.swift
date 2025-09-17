@@ -15,12 +15,28 @@ let settings: SettingsDictionary = [
 	"DEVELOPMENT_TEAM": "FUG9F8QSPW", // grep -r DEVELOPMENT_TEAM *
 ]
 
+let minimumVersion = DeploymentTargets.macOS("15.7")
+
+let macros = Target.target(
+	name: "Macros",
+	destinations: .macOS,
+	product: .macro,
+	bundleId: "\(identifier).macros",
+	deploymentTargets: minimumVersion,
+	sources: ["Macros/**"],
+	dependencies: [
+		// .external(name: "SwiftSyntax"),
+		.external(name: "SwiftSyntaxMacros"),
+		.external(name: "SwiftCompilerPlugin"),
+	]
+)
+
 let app = Target.target(
 	name: name,
 	destinations: .macOS,
 	product: .app,
 	bundleId: identifier,
-	deploymentTargets: .macOS("15.7"),
+	deploymentTargets: minimumVersion,
 	infoPlist: .extendingDefault(with: infoPlist.merging([
 		"LSApplicationCategoryType": "public.app-category.productivity",
 		"NSMainStoryboardFile": "",
@@ -32,7 +48,8 @@ let app = Target.target(
 		"com.apple.security.app-sandbox": false,
 	]),
 	dependencies: [
-		.external(name: "SwiftMacros"),
+		.target(macros),
+//		.external(name: "SwiftMacros"),
 		.external(name: "SFSafeSymbols"),
 		.external(name: "LaunchAtLogin"),
 	],
@@ -55,8 +72,10 @@ let project = Project(
 		"ENABLE_USER_SCRIPT_SANDBOXING": true,
 		"ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": true,
 		"ENABLE_MODULE_VERIFIER": true,
+		"STRING_CATALOG_GENERATE_SYMBOLS": true,
 	], uniquingKeysWith: { _, new in new })),
 	targets: [
 		app,
+		macros,
 	],
 )
