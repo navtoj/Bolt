@@ -25,7 +25,6 @@ let macros = Target.target(
 	deploymentTargets: minimumVersion,
 	sources: ["Macros/**"],
 	dependencies: [
-		// .external(name: "SwiftSyntax"),
 		.external(name: "SwiftSyntaxMacros"),
 		.external(name: "SwiftCompilerPlugin"),
 	]
