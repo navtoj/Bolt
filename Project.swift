@@ -5,7 +5,7 @@ let identifier = "com.navtoj." + name.lowercased()
 
 let infoPlist: [String: Plist.Value] = [
 	"CFBundleVersion": "1", // Internal
-	"CFBundleShortVersionString": "0.0.1", // Public
+	"CFBundleShortVersionString": "1.0.0", // Public
 	"NSHumanReadableCopyright": "Copyright © Navtoj Chahal",
 ]
 
