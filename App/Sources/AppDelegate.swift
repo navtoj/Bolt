@@ -12,7 +12,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
 	// Plugins
 
-	private let mediaKeys = MediaKeys.shared
+	private let musicPlayer = MusicPlayer.shared
 
 	// MARK: Functions
 

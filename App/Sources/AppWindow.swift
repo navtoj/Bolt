@@ -9,7 +9,16 @@ final class AppWindow: NSWindow {
 
 	// MARK: Properties
 
-	private let hostingView = NSHostingView(rootView: ContentView())
+	private var hostingView: NSHostingView<ContentView>? {
+		didSet {
+			if let hostingView {
+				contentView = hostingView
+				setContentSize(hostingView.intrinsicContentSize)
+			} else {
+				contentView = nil
+			}
+		}
+	}
 
 	// MARK: Lifecycle
 
@@ -24,8 +33,7 @@ final class AppWindow: NSWindow {
 		level = .floating
 		collectionBehavior = .moveToActiveSpace
 
-		contentView = hostingView
-		setContentSize(hostingView.intrinsicContentSize)
+		hostingView = NSHostingView(rootView: ContentView())
 		center()
 
 		isReleasedWhenClosed = false
@@ -60,6 +68,7 @@ final class AppWindow: NSWindow {
 			if let error { return print(error) }
 
 			DispatchQueue.main.async {
+				self.hostingView = self.hostingView ?? NSHostingView(rootView: ContentView())
 				NSApp.setActivationPolicy(.regular)
 				printd("window.open", NSApp.activationPolicy().rawValue)
 				self.makeKeyAndOrderFront(nil)
@@ -72,6 +81,7 @@ final class AppWindow: NSWindow {
 
 extension AppWindow: NSWindowDelegate {
 	func windowWillClose(_: Notification) {
+		hostingView = nil
 		NSApp.setActivationPolicy(.accessory)
 		printd("windowWillClose", NSApp.activationPolicy().rawValue)
 	}

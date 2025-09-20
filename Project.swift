@@ -25,11 +25,13 @@ let app = Target.target(
 		"LSApplicationCategoryType": "public.app-category.productivity",
 		"NSMainStoryboardFile": "",
 		"LSUIElement": true,
+		"NSAppleEventsUsageDescription": "Permission to Play / Pause Media",
 	], uniquingKeysWith: { _, new in new })),
 	sources: ["App/Sources/**"],
 	resources: ["App/Resources/**"],
 	entitlements: .dictionary([
 		"com.apple.security.app-sandbox": false,
+		"com.apple.security.automation.apple-events": true,
 	]),
 	dependencies: [
 		.external(name: "SFSafeSymbols"),
