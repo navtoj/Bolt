@@ -1,4 +1,5 @@
 import AppKit
+import Sparkle
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
 	// MARK: Static Properties
@@ -6,6 +7,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 	static let shared = AppDelegate()
 
 	// MARK: Properties
+
+	let updaterController = SPUStandardUpdaterController(
+		startingUpdater: true,
+		updaterDelegate: nil,
+		userDriverDelegate: nil
+	)
 
 	private let status = AppStatus.shared
 	private let window = AppWindow.shared

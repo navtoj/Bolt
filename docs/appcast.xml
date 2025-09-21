@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Bolt</title>
+        <item>
+            <title>1.0.1</title>
+            <pubDate>Sun, 21 Sep 2025 15:16:08 -0700</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.7</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/navtoj/Bolt/releases/download/1.0.1/Bolt.zip" length="3011399" type="application/octet-stream" sparkle:edSignature="kLZBLRq12d//h4UfNqxr5GahhqegO13JHVsvTg2vZDAk10CP/iGiv+4bcvqa4bLxm2C0x2YNb0YbdprFZl24Cg=="/>
+        </item>
+    </channel>
+</rss>

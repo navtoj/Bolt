@@ -13,7 +13,28 @@ struct ContentView: View {
 
 	var body: some View {
 		VStack(alignment: .leading) {
-			LaunchAtLogin.Toggle("Open at Login")
+			VStack(spacing: 12) {
+				HStack {
+					Text("Open at Login")
+						.fixedSize()
+						.frame(maxWidth: .infinity, alignment: .leading)
+					HStack {
+						LaunchAtLogin.Toggle(label: {})
+							.toggleStyle(.switch)
+					}
+					.frame(maxWidth: .infinity, alignment: .trailing)
+				}
+
+				Button {
+					AppDelegate.shared.updaterController.updater.checkForUpdates()
+				} label: {
+					Text("Check for Updates")
+						.frame(
+							maxWidth: .infinity,
+							minHeight: 20
+						)
+				}
+			}
 
 			Divider()
 				.padding(.vertical, 4)

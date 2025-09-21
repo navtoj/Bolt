@@ -61,3 +61,13 @@ security find-identity -v -p codesigning | grep 'Apple Development' | xargs | cu
 ```
 ditto -ck --keepParent --sequesterRsrc Bolt.app Bolt.zip
 ```
+
+#### Update
+
+Ensure `SUPublicEDKey` in `Info.plist` is set to the public key and macOS Keychain contains the private key by running `generate_keys --account "Sparkle:Bolt" -p`[^1] in the terminal.
+
+```
+generate_appcast --account "Sparkle:Bolt" -o docs/appcast.xml path/to/zip/files
+```
+
+[^1]: The `generate_*` commands can be found inside the `sparkle` symlink for the `.build/artifacts/sparkle/Sparkle/bin` directory.

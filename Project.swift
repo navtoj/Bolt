@@ -4,9 +4,11 @@ let name = "Bolt"
 let identifier = "com.navtoj." + name.lowercased()
 
 let infoPlist: [String: Plist.Value] = [
-	"CFBundleVersion": "1", // Internal
-	"CFBundleShortVersionString": "1.0.0", // Public
+	"CFBundleVersion": "2", // Internal
+	"CFBundleShortVersionString": "1.0.1", // Public
 	"NSHumanReadableCopyright": "Copyright © Navtoj Chahal",
+	"SUFeedURL": "https://navtoj.github.io/Bolt/appcast.xml",
+	"SUPublicEDKey": "ZW5EvT7HK6P8ph5KhNCA9z+XsWcEJs77fCOXLGS9lko=",
 ]
 
 let settings: SettingsDictionary = [
