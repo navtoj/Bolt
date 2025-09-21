@@ -19,5 +19,6 @@ let package = Package(
 		.package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", .upToNextMajor(from: "6.2.0")),
 		.package(url: "https://github.com/sindresorhus/LaunchAtLogin-Modern.git", .upToNextMajor(from: "1.1.0")),
 		.package(url: "https://github.com/sindresorhus/Defaults", .upToNextMajor(from: "9.0.5")),
+		.package(url: "https://github.com/sparkle-project/Sparkle", .upToNextMajor(from: "2.8.0")),
 	]
 )

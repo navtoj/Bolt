@@ -37,6 +37,7 @@ let app = Target.target(
 		.external(name: "SFSafeSymbols"),
 		.external(name: "LaunchAtLogin"),
 		.external(name: "Defaults"),
+		.external(name: "Sparkle"),
 	],
 	settings: .settings(
 		base: [
