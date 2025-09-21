@@ -51,7 +51,7 @@ struct ContentView: View {
 							}
 						}
 					} label: {
-						Text(alternativeMusicApp?.name ?? "Select App")
+						Text(alternativeMusicApp?.name ?? "Select Application")
 							.frame(
 								maxWidth: .infinity,
 								minHeight: 20
@@ -59,7 +59,7 @@ struct ContentView: View {
 					}
 
 					if alternativeMusicApp != nil {
-						Button {
+						Button(role: .destructive) {
 							alternativeMusicApp = nil
 						} label: {
 							Image(systemSymbol: .xmark)

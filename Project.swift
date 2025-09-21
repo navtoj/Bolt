@@ -58,6 +58,7 @@ let project = Project(
 		"ENABLE_USER_SCRIPT_SANDBOXING": true,
 		"ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": true,
 		"ENABLE_MODULE_VERIFIER": true,
+		"STRING_CATALOG_GENERATE_SYMBOLS": true,
 	], uniquingKeysWith: { _, new in new })),
 	targets: [
 		app,

@@ -17,18 +17,18 @@ A better macOS experience - with powerful tweaks and seamless enhancements.
 
 Replace _Apple Music_ with _Spotify_ or any _other_ music app.
 
-- Launch selected app with `⏯` media keys.
-- Toggle media playback in selected app.
+-   Launch selected app with `⏯` media keys.
+-   Toggle media playback in selected app.
 
 ## Development
 
 ### Install Dependencies
 
-- [Tuist](https://github.com/tuist/tuist) – `brew install --formula tuist/tuist/tuist`
+-   [Tuist](https://github.com/tuist/tuist) – `brew install --formula tuist/tuist/tuist`
 
-- [Swift Format](https://github.com/nicklockwood/SwiftFormat) – `brew install swiftformat`
+-   [Swift Format](https://github.com/nicklockwood/SwiftFormat) – `brew install swiftformat`
 
-- [Swift Lint](https://github.com/realm/SwiftLint) – `brew install swiftlint`
+-   [Swift Lint](https://github.com/realm/SwiftLint) – `brew install swiftlint`
 
 ### Link Git Hooks
 
@@ -46,4 +46,18 @@ tuist install
 
 ```shell
 tuist generate
+```
+
+### Release
+
+#### Sign
+
+```
+security find-identity -v -p codesigning | grep 'Apple Development' | xargs | cut -d ' ' -f2 | xargs -I% codesign --deep --force --sign % Bolt.app
+```
+
+#### Package
+
+```
+ditto -ck --keepParent --sequesterRsrc Bolt.app Bolt.zip
 ```
