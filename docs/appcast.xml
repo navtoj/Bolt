@@ -3,6 +3,14 @@
     <channel>
         <title>Bolt</title>
         <item>
+            <title>1.0.2</title>
+            <pubDate>Sun, 21 Sep 2025 22:40:15 -0700</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.7</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/navtoj/Bolt/releases/download/1.0.2/Bolt.zip" length="3011500" type="application/octet-stream" sparkle:edSignature="SyjR9hmHwYfEtV/osoBhIaefXrFPzsi/QA3GOXeZwP3LkevRi3jt62eJyDACJRuIAiSAPgRTFsPkSBLtXChWCQ=="/>
+        </item>
+        <item>
             <title>1.0.1</title>
             <pubDate>Sun, 21 Sep 2025 15:16:08 -0700</pubDate>
             <sparkle:version>2</sparkle:version>

@@ -4,11 +4,15 @@ let name = "Bolt"
 let identifier = "com.navtoj." + name.lowercased()
 
 let infoPlist: [String: Plist.Value] = [
-	"CFBundleVersion": "2", // Internal
-	"CFBundleShortVersionString": "1.0.1", // Public
+	"CFBundleVersion": "3", // Internal
+	"CFBundleShortVersionString": "1.0.2", // Public
 	"NSHumanReadableCopyright": "Copyright © Navtoj Chahal",
 	"SUFeedURL": "https://navtoj.github.io/Bolt/appcast.xml",
 	"SUPublicEDKey": "ZW5EvT7HK6P8ph5KhNCA9z+XsWcEJs77fCOXLGS9lko=",
+	"SUEnableAutomaticChecks": true,
+	"SUScheduledCheckInterval": 3600,
+	"SUVerifyUpdateBeforeExtraction": true,
+	"SUDefaultsDomain": "${InfoPlist_SUDefaultsDomain}",
 ]
 
 let settings: SettingsDictionary = [
@@ -44,9 +48,11 @@ let app = Target.target(
 	settings: .settings(
 		base: [
 			"ENABLE_HARDENED_RUNTIME": true,
+			"InfoPlist_SUDefaultsDomain": "\(identifier).sparkle",
 		],
 		debug: [
 			"PRODUCT_BUNDLE_IDENTIFIER": "\(identifier).debug",
+			"InfoPlist_SUDefaultsDomain": "\(identifier).sparkle.debug",
 		],
 	),
 	environmentVariables: [
