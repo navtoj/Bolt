@@ -46,9 +46,11 @@ struct ContentView: View {
 				HStack {
 					Button {
 						let panel = NSOpenPanel()
+						panel.directoryURL = .applicationDirectory
 						panel.allowedContentTypes = [.application]
 						panel.allowsMultipleSelection = false
 						panel.canChooseDirectories = false
+						panel.canCreateDirectories = false
 						panel.canChooseFiles = true
 						panel.begin { response in
 							guard response == .OK, let url = panel.url else { return }
