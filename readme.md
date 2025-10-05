@@ -70,4 +70,4 @@ Ensure `SUPublicEDKey` in `Info.plist` is set to the public key and macOS Keycha
 generate_appcast --account "Sparkle:Bolt" -o docs/appcast.xml path/to/zip/files
 ```
 
-[^1]: The `generate_*` commands can be found inside the [`sparkle`](./sparkle) symlink for the `.build/artifacts/sparkle/Sparkle/bin` directory.
+[^1]: The `generate_*` commands can be found inside the `sparkle` symlink for the `.build/artifacts/sparkle/Sparkle/bin` directory.
